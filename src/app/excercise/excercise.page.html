@@ -1,0 +1,35 @@
+<ion-content class="content">
+    <div class="boxquestion" [ngClass]="{'hide': hide}">
+        <ion-progress-bar color="success" value="{{progess}}"></ion-progress-bar>
+        <div class="header-question" color="primary">
+            <div class="text">
+                <h1 class="header-h1" color="light">{{question}}</h1>
+            </div>
+        </div>
+        <div class="main-question">
+            <div class="boxanswer">
+                <div class="btn" (click)="selectAnswer(1)" (tap)="selectAnswer(1)">{{answer1}}{{answer2}}{{answer3}}</div>
+                <div class="btn" (click)="selectAnswer(2)" (tap)="selectAnswer(2)">{{answer2}}</div>
+                <div class="btn" (click)="selectAnswer(3)" (tap)="selectAnswer(3)">{{answer3}}</div>
+                <div class="btn" (click)="selectAnswer(4)" (tap)="selectAnswer(4)">{{answer4}}</div>
+            </div>
+            <div class="btn-next pt-5" (click)="nextQuestion()" (tap)="nextQuestion()" id="next">
+                <ion-button expand="block" class="" id="btnstart">Tiếp Tục</ion-button>
+            </div>
+        </div>
+    </div>
+    <div class="btn-next pt-15" [ngClass]="{'btnstart': btnstart}">
+        <ion-button expand="block" (click)="startGame()" (tap)="startGame()" id="btnstart">Start</ion-button>
+    </div>
+    <div class="boxkq hide" id="boxkq">
+        <img src="../../assets/img/TDV_M50_08.svg" alt="">
+        <div class="box-text">
+            <h1>Chúc Mừng</h1>
+            <div class="percent">{{persentWin}}% {{win}}/{{allQuestion}}</div>
+            <p>Bạn đã hoàn thành phần thi trắc nghiệm.</p>
+            <ion-button color="success" (click)="goHome()" (tap)="goHome()">Trở Về</ion-button>
+        </div>
+
+    </div>
+
+</ion-content>

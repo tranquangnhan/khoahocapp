@@ -9,13 +9,21 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { StreamingMedia } from '@ionic-native/streaming-media/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule,
+     IonicModule.forRoot(), AppRoutingModule,
+    HttpClientModule],
   providers: [
     StatusBar,
+    YoutubeVideoPlayer,
     SplashScreen,
+    StreamingMedia,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
